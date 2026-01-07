@@ -76,12 +76,11 @@ function renderGifts() {
     const giftNameSpan = document.createElement('span');
     giftNameSpan.className = 'gift-name';
     giftNameSpan.textContent = gift.name;
+    giftInfo.appendChild(giftNameSpan);
     
     const giftStatus = document.createElement('span');
     giftStatus.className = `gift-status ${isReserved ? 'reserved' : ''}`;
     giftStatus.textContent = isReserved ? `✓ Koupi: ${gift.reserved_by}` : 'Dostupné';
-    
-    giftInfo.appendChild(giftNameSpan);
     giftInfo.appendChild(giftStatus);
     
     const buttonsDiv = document.createElement('div');
@@ -90,17 +89,23 @@ function renderGifts() {
     const btn = document.createElement('button');
     btn.className = isReserved ? 'btn btn-secondary btn-small' : 'btn btn-reserve';
     btn.textContent = isReserved ? 'Zrušit' : 'Rezervovat';
-    btn.dataset.giftId = gift.id;
-    btn.dataset.giftName = gift.name;
+    btn.type = 'button';
     
     if (isReserved) {
-      btn.addEventListener('click', () => cancelReservation(gift.id));
+      btn.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        cancelReservation(gift.id);
+      };
     } else {
-      btn.addEventListener('click', () => openModal(gift.id, gift.name));
+      btn.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openModal(gift.id, gift.name);
+      };
     }
     
     buttonsDiv.appendChild(btn);
-    
     giftEl.appendChild(giftInfo);
     giftEl.appendChild(buttonsDiv);
     giftsList.appendChild(giftEl);
