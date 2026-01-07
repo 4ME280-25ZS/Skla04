@@ -69,21 +69,40 @@ function renderGifts() {
     
     const giftEl = document.createElement('div');
     giftEl.className = 'gift-item';
-    giftEl.innerHTML = `
-      <div class="gift-info">
-        <span class="gift-name">${escapeHtml(gift.name)}</span>
-        <span class="gift-status ${isReserved ? 'reserved' : ''}">
-          ${isReserved ? `✓ Koupi: ${escapeHtml(gift.reserved_by)}` : 'Dostupné'}
-        </span>
-      </div>
-      <div class="gift-buttons">
-        ${isReserved 
-          ? `<button class="btn btn-secondary btn-small" onclick="cancelReservation(${gift.id})">Zrušit</button>` 
-          : `<button class="btn btn-reserve" onclick="openModal(${gift.id}, '${escapeHtml(gift.name).replace(/'/g, "\\'")}')" >Rezervovat</button>`
-        }
-      </div>
-    `;
     
+    const giftInfo = document.createElement('div');
+    giftInfo.className = 'gift-info';
+    
+    const giftNameSpan = document.createElement('span');
+    giftNameSpan.className = 'gift-name';
+    giftNameSpan.textContent = gift.name;
+    
+    const giftStatus = document.createElement('span');
+    giftStatus.className = `gift-status ${isReserved ? 'reserved' : ''}`;
+    giftStatus.textContent = isReserved ? `✓ Koupi: ${gift.reserved_by}` : 'Dostupné';
+    
+    giftInfo.appendChild(giftNameSpan);
+    giftInfo.appendChild(giftStatus);
+    
+    const buttonsDiv = document.createElement('div');
+    buttonsDiv.className = 'gift-buttons';
+    
+    const btn = document.createElement('button');
+    btn.className = isReserved ? 'btn btn-secondary btn-small' : 'btn btn-reserve';
+    btn.textContent = isReserved ? 'Zrušit' : 'Rezervovat';
+    btn.dataset.giftId = gift.id;
+    btn.dataset.giftName = gift.name;
+    
+    if (isReserved) {
+      btn.addEventListener('click', () => cancelReservation(gift.id));
+    } else {
+      btn.addEventListener('click', () => openModal(gift.id, gift.name));
+    }
+    
+    buttonsDiv.appendChild(btn);
+    
+    giftEl.appendChild(giftInfo);
+    giftEl.appendChild(buttonsDiv);
     giftsList.appendChild(giftEl);
   });
 }
