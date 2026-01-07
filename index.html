@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rozcestník projektů</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #0f0326;
+      --bg2: #2b0b4a;
+      --accent1: #ff4da6;
+      --accent2: #7ef0ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Baloo 2', 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(127,0,255,0.12), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(255,77,166,0.09), transparent),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: #e8e8ff;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: var(--accent1);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 6px 20px rgba(255, 77, 166, 0.14), 0 0 8px rgba(126, 240, 255, 0.06);
+      margin: 0 0 20px;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      color: #c8c3ff;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      text-decoration: none;
+      color: #e8e8ff;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 40px rgba(11, 8, 20, 0.6);
+    }
+
+    .project-card:hover {
+      border: 1px solid rgba(255, 77, 166, 0.2);
+      box-shadow: 0 10px 40px rgba(255, 77, 166, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .project-card h2 {
+      margin: 0 0 10px;
+      color: var(--accent1);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      text-shadow: 0 0 10px rgba(255, 77, 166, 0.3);
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--accent2);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+
+      .project-card h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Projekty</h1>
+    <p class="subtitle">Vyber si projekt, který chceš vidět</p>
+
+    <div class="projects">
+      <a href="vizitka/" class="project-card">
+        <h2>💼 Vizitka</h2>
+        <p>Kontaktní stránka — Jan Glín</p>
+      </a>
+
+      <a href="wishlist/" class="project-card">
+        <h2>🎁 Wishlist</h2>
+        <p>Aplikace pro rezervaci darů</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projekty — Skla04</title>
+  <meta name="description" content="Rozčestník projektů">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #0f0326;
+      --bg2: #2b0b4a;
+      --accent1: #ff4da6;
+      --accent2: #7ef0ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Baloo 2', 'Orbitron', system-ui, -apple-system;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(127,0,255,0.12), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(255,77,166,0.09), transparent),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: #e8e8ff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 6vh auto;
+      padding: 28px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent1);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 6px 20px rgba(255, 77, 166, 0.14), 0 0 8px rgba(126, 240, 255, 0.06);
+      margin: 0 0 8px;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #c8c3ff;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 40px rgba(11, 8, 20, 0.6);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      border: 1px solid rgba(255, 77, 166, 0.3);
+      box-shadow: 0 10px 40px rgba(255, 77, 166, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .project-card h2 {
+      color: var(--accent1);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      margin: 0 0 12px;
+      text-shadow: 0 0 10px rgba(255, 77, 166, 0.2);
+    }
+
+    .project-card p {
+      color: #c8c3ff;
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .project-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 16px;
+        margin: 4vh 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .project-card {
+        padding: 24px;
+      }
+
+      .project-card h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>🎨 Projekty Skla04</h1>
+    <p class="subtitle">Vyber si projekt, který chceš vidět</p>
+
+    <div class="projects-grid">
+      <a href="./vizitka/" class="project-card">
+        <div class="project-icon">💼</div>
+        <h2>Vizitka</h2>
+        <p>Kontaktní stránka Jan Glína<br>s Yung Lean stylem</p>
+      </a>
+
+      <a href="./wishlist/" class="project-card">
+        <div class="project-icon">🎁</div>
+        <h2>Wishlist</h2>
+        <p>Interaktivní seznam darů<br>s live rezervacemi</p>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
