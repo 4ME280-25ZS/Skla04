@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wishlist</title>
+  <meta name="description" content="Wishlist aplikace — rezervuj si dar">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>🎁 Wishlist</h1>
+    <p class="subtitle">Vyber si dar, který chceš koupit</p>
+    
+    <div class="gifts-list" id="giftsList">
+      <!-- Darů se načítají dynamicky -->
+    </div>
+
+    <div class="loading" id="loading">Načítám...</div>
+  </main>
+
+  <!-- Modal pro rezervaci -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>Rezervovat dar</h2>
+      <p id="modalGiftName"></p>
+      <input type="text" id="nameInput" placeholder="Tvoje jméno" maxlength="50">
+      <div class="modal-buttons">
+        <button class="btn btn-primary" id="confirmBtn">Potvrdit</button>
+        <button class="btn btn-secondary" id="cancelBtn">Zrušit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>

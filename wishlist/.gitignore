@@ -1,0 +1,10 @@
+# Ignore common system files
+.DS_Store
+Thumbs.db
+
+# Node modules
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
